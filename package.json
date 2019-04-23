@@ -1,0 +1,14 @@
+{
+  "name": "hci-assignment-7",
+  "version": "1.0.0",
+  "description": "TODO desktop application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Collins M.",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "electron": "^4.1.4"
+  }
+}
