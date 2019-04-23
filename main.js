@@ -8,7 +8,7 @@ let mainWindow;
 let addWindow;
 
 // I reused some of the sample code, as well as some sample code from Traversy Media tutorials
-app.on("ready", function() {
+app.on("ready", () => {
   mainWindow = new BrowserWindow({});
   mainWindow.loadURL(
     url.format({
@@ -17,7 +17,7 @@ app.on("ready", function() {
       slashes: true
     })
   );
-  mainWindow.on("closed", function() {
+  mainWindow.on("closed", () => {
     app.quit();
   });
 
@@ -26,7 +26,7 @@ app.on("ready", function() {
   Menu.setApplicationMenu(mainMenu);
 });
 
-function createAddWindow() {
+createAddWindow = () => {
   addWindow = new BrowserWindow({
     width: 300,
     height: 200,
@@ -39,9 +39,9 @@ function createAddWindow() {
       slashes: true
     })
   );
-}
+};
 
-ipcMain.on("item:add", function(e, item) {
+ipcMain.on("item:add", (e, item) => {
   mainWindow.webContents.send("item:add", item);
   addWindow.close();
 });
